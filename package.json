@@ -1,0 +1,15 @@
+{
+  "name": "todo-list-nodejs",
+  "version": "1.0.0",
+  "description": "It is a list which marks tasks that are to be done.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enoch David Lal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
