@@ -9,8 +9,8 @@ const createController = require('../controllers/post_data_controller')
 
 router.get('/',homeController.home);
 // router.use('/index_post_data',require('./index_post_data'));
-router.use('/created',require('./index_post_data'));
-router.use('/kamlesh',require('./index_delete_data'));
+router.use('/create',require('./index_post_data'));
+router.use('/delete',require('./index_delete_data'));
 
 
 

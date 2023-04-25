@@ -1,14 +1,49 @@
-<html lang="en">
-<head>
-    <title>
-        <%= title %>
-    </title>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+    </head>
+    <body>
+        
+        <h1><%= title %></h1>
 
-    <link rel="stylesheet" href="/assets/css/home.css">
-</head>
-<body>
-    
-    <h1><%= title %></h1>
+        <form action="/create/create-todo" method="post">
+            <input type="text" name="description" placeholder="Enter Description" required>
+            
+            <label for="category">Choose a Category:</label>
+            <select name="category" id="category">
+                <option value="home">Home</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="others">Others</option>
+            </select>
 
-</body>
+            <input type="date" name="dueDate">
+
+            <button type="submit">Add</button>
+
+        </form>
+        
+        <div>
+            <form action="/delete/delete-todo" method="post">
+                <button type="submit">Delete Task</button>
+            <ul>
+                <% for (let todo of todo_lists) { %>
+                    <li  type="none">
+                        <div id="np">
+                        <p id="description"><%= todo.description %></p>
+                        <p id="category"><%= todo.category %></p>
+                        <p id="dueDate"><%= todo.dueDate %></p>
+                        <input name="ids" value="<%=todo._id%>" type="checkbox">
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+            
+            </form>
+        </div>
+
+    </body>
 </html>

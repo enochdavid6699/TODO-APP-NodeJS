@@ -1,12 +1,12 @@
-//  riute for deletion
+//  route for deletion
 
 
 const express=require('express');
 const router=express.Router();
-const homeController=require('../controllers/delete_data_controller');
+const delete_data_controller=require('../controllers/delete_data_controller');
 
 
 
-router.get('/delete-todo',homeController.home_delete);
+router.post('/delete-todo', delete_data_controller.home_delete);
 
 module.exports=router;
