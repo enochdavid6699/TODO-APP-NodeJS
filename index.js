@@ -3,7 +3,7 @@ const db = require('./config/mongoose');
 const app = express();
 const port = 8000;
 
-const Task = require('./models/task');
+const Todo = require('./models/todo');
 
 //Use Express Router
 app.use('/' , require('./routes/index'));
