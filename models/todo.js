@@ -11,9 +11,6 @@ const todoSchema = new mongoose.Schema({
     },
     dueDate:{
         type: Date
-    },
-    check:{
-        type: Boolean,
     }
 });
 
