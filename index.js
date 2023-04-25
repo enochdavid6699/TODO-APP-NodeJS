@@ -1,17 +1,23 @@
+//Acquire Express Server
 const express = require('express');
-const db = require('./config/mongoose');
-const app = express();
 const port = 8000;
 
-const Todo = require('./models/todo');
+const db = require('./config/mongoose');
+
+const app = express();
+const path = require('path');
+
+// const Todo = require('./models/todo');
 
 //Use Express Router
 app.use('/' , require('./routes/index'));
 
-app.set('view engine' , 'ejs'); 
-app.set('views' , './views');
+// app.use(express.urlencoded()); //This particular line is giving error
 
 app.use(express.static('assets'));
+
+app.set('view engine' , 'ejs'); 
+app.set('views' , './views');
 
 app.listen(port , function(err){
 
