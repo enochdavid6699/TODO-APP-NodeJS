@@ -4,7 +4,10 @@ const Todo = require('../models/todo');
 
 module.exports.home_delete = async function(req, res) {
   try {
-    const ids = req.body.ids; // get the array of ids from the request body
+    let ids = req.body.ids; // get the array of ids from the request body
+    if (!Array.isArray(ids)) {
+      ids = [ids]; // convert to an array if it's not already one
+    }
     for (let id of ids) {
       await Todo.findByIdAndDelete(id);
     }
@@ -12,7 +15,8 @@ module.exports.home_delete = async function(req, res) {
   } catch (error) {
     console.log(error);
   }
-}
+};
+
 
  
 
